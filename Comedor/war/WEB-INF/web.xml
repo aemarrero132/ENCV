@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>PersonalData</servlet-name>
+    <servlet-class>com.comedor.server.PersonalDataImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>PersonalData</servlet-name>
+    <url-pattern>/comedor/personaldata</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>MarcajesData</servlet-name>
+    <servlet-class>com.comedor.server.MarcajesDataImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>MarcajesData</servlet-name>
+    <url-pattern>/comedor/marcajesdata</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ImpresionPDF</servlet-name>
+    <servlet-class>com.comedor.server.ImpresionPDFImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>ImpresionPDF</servlet-name>
+    <url-pattern>/comedor/impresionpdf</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    	<servlet-name>ServletPrueba</servlet-name>
+        <servlet-class>com.comedor.server.FileUploadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+        <servlet-name>ServletPrueba</servlet-name>
+        <url-pattern>/comedor/upload</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>ErrorLog</servlet-name>
+    <servlet-class>com.comedor.server.ErrorLogImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>ErrorLog</servlet-name>
+    <url-pattern>/comedor/errorlog</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>Comedor.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>
