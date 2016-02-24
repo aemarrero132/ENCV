@@ -1,0 +1,2 @@
+serviceClass: com.comedor.client.interfaces.PersonalData
+path: CDB76B9E62226288384B318A2E46DFA6.gwt.rpc

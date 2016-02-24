@@ -1,0 +1,2 @@
+serviceClass: com.comedor.client.interfaces.MarcajesData
+path: 4415E4FDE6AF653EAF0D5836BBAAA9F2.gwt.rpc

@@ -1,0 +1,2 @@
+serviceClass: com.comedor.client.interfaces.ErrorLog
+path: BAEC43DF0376307EED30338B60E1D06A.gwt.rpc

@@ -1,0 +1,6 @@
+# Module comedor
+# RPC service class, partial path of RPC policy file
+com.comedor.client.interfaces.ImpresionPDF, 90059FD795A4AE87D7E666BBCDE3AB27.gwt.rpc
+com.comedor.client.interfaces.ErrorLog, BAEC43DF0376307EED30338B60E1D06A.gwt.rpc
+com.comedor.client.interfaces.MarcajesData, 4415E4FDE6AF653EAF0D5836BBAAA9F2.gwt.rpc
+com.comedor.client.interfaces.PersonalData, CDB76B9E62226288384B318A2E46DFA6.gwt.rpc

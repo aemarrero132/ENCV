@@ -1,0 +1,2 @@
+serviceClass: com.comedor.client.interfaces.ImpresionPDF
+path: 90059FD795A4AE87D7E666BBCDE3AB27.gwt.rpc
