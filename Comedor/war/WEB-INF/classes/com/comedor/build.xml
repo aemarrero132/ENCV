@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="ImageViewer" default="all" basedir="U:\RECURSOS_HUMANOS\Comedor">
+	<description>
+		This is build file for GWT module 'com.comedor.Comedor' deployment.
+		GWT Designer generates it each time when you initiate deployment.
+		
+		You can use this file later for manual deployment, but keep in mind, that
+		classpath is hardcoded in it, so after changes in classpath you should
+		regenerate build file.
+	</description>
+
+	<property name="gwt.home" value="U:/SISTEMAS/Encvalibjava/librerias/gwt-2.4.0" />
+	<property name="gwt.module.id" value="com.comedor.Comedor" />
+	<property name="war.name" value="Comedor28.war" />
+
+	<target name="jars" description="Package up the module project and required projects as jars">
+		<mkdir dir="war/WEB-INF/lib" />
+		<!--=== Comedor ===-->
+		<jar destfile='war/WEB-INF/lib/Comedor.jar'>
+			<fileset dir="U:/RECURSOS_HUMANOS/Comedor/src">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="U:/RECURSOS_HUMANOS/Comedor/war/WEB-INF/classes">
+				<include name="**/*.class"/>
+			</fileset>
+		</jar>
+		<copy todir='war/WEB-INF/lib'>
+			<fileset file="C:\eclipse\plugins\org.junit_3.8.2.v3_8_2_v20100427-1100\junit.jar"/>
+			<fileset file="U:\SISTEMAS\Encvalibjava\librerias\gwt-2.4.0\gwt-dev.jar"/>
+			<fileset file="U:\SISTEMAS\Encvalibjava\librerias\gwt-2.4.0\validation-api-1.0.0.GA-sources.jar"/>
+			<fileset file="U:\SISTEMAS\Encvalibjava\librerias\gwt-2.4.0\validation-api-1.0.0.GA.jar"/>
+			<fileset file="U:\SISTEMAS\Encvalibjava\librerias\itextpdf\iText-2.1.7.jar"/>
+			<fileset file="U:\SISTEMAS\Encvalibjava\librerias\itextpdf\itextpdf-5.1.1.jar"/>
+			<fileset file="U:\SISTEMAS\Encvalibjava\librerias\mysql-connector-java\mysql-connector-java-5.1.6-bin.jar"/>
+			<fileset file="U:\SISTEMAS\Encvalibjava\librerias\struts-2.3.2\commons-fileupload-1.2.2.jar"/>
+			<fileset file="U:\SISTEMAS\Encvalibjava\librerias\struts-2.3.2\commons-io-1.3.2.jar"/>
+			<fileset file="U:\SISTEMAS\Encvalibjava\librerias\gwt-timepicker-0.21\gwt-timepicker-0.21.jar"/>
+		</copy>		
+	</target>
+
+	<target name="gwt-compile" description="Compile to JavaScript">
+		<java classname="com.google.gwt.dev.Compiler" fork="yes" failonerror="true" maxmemory="256m">
+			<classpath>
+				<pathelement location="U:/RECURSOS_HUMANOS/Comedor/src" />
+				<pathelement location="U:/RECURSOS_HUMANOS/Comedor/war/WEB-INF/classes" />
+				<pathelement location="C:/eclipse/plugins/org.junit_3.8.2.v3_8_2_v20100427-1100/junit.jar" />
+				<pathelement location="U:/SISTEMAS/Encvalibjava/librerias/gwt-2.4.0/gwt-user.jar" />
+				<pathelement location="U:/SISTEMAS/Encvalibjava/librerias/gwt-2.4.0/gwt-dev.jar" />
+				<pathelement location="U:/SISTEMAS/Encvalibjava/librerias/gwt-2.4.0/validation-api-1.0.0.GA-sources.jar" />
+				<pathelement location="U:/SISTEMAS/Encvalibjava/librerias/gwt-2.4.0/validation-api-1.0.0.GA.jar" />
+				<pathelement location="U:/SISTEMAS/Encvalibjava/librerias/itextpdf/iText-2.1.7.jar" />
+				<pathelement location="U:/SISTEMAS/Encvalibjava/librerias/itextpdf/itextpdf-5.1.1.jar" />
+				<pathelement location="U:/SISTEMAS/Encvalibjava/librerias/mysql-connector-java/mysql-connector-java-5.1.6-bin.jar" />
+				<pathelement location="U:/SISTEMAS/Encvalibjava/librerias/struts-2.3.2/commons-fileupload-1.2.2.jar" />
+				<pathelement location="U:/SISTEMAS/Encvalibjava/librerias/struts-2.3.2/commons-io-1.3.2.jar" />
+				<pathelement location="U:/SISTEMAS/Encvalibjava/librerias/gwt-timepicker-0.21/gwt-timepicker-0.21.jar" />
+				<pathelement location="U:/SISTEMAS/Encvalibjava/librerias/gwt-2.4.0/gwt-dev.jar" />
+			</classpath>
+			<arg value="-style"/>
+			<arg value="PRETTY"/>
+			<arg value="${gwt.module.id}" />
+		</java>
+	</target>
+
+	<target name="war" depends="gwt-compile, jars">
+		<delete file="${war.name}" />
+		<jar destfile="${war.name}" basedir="war" duplicate="preserve" />
+	</target>
+	
+	<target name="deploy" depends="war">
+		<move file="${war.name}" todir="C:/Users/andres.marrero/Desktop/PROGRAMAS-JAVA/Comedor" />
+	</target>
+
+	<target name="all" depends="deploy" />
+
+</project>
